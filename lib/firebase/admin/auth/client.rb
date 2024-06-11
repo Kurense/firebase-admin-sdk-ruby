@@ -35,12 +35,11 @@ module Firebase
         # @param [String, nil] photo_url The user’s photo URL.
         # @param [String, nil] password The user’s raw, unhashed password.
         # @param [Boolean, nil] disabled A boolean indicating whether or not the user account is disabled.
-        # @param [Hash, nil] custom_claims "Custom attributes" to store on the user, which will appear in their auth token.
         #
         # @raise [CreateUserError] if a user cannot be created.
         #
         # @return [UserRecord]
-        def create_user(uid: nil, display_name: nil, email: nil, email_verified: nil, phone_number: nil, photo_url: nil, password: nil, disabled: nil, custom_claims: nil)
+        def create_user(uid: nil, display_name: nil, email: nil, email_verified: nil, phone_number: nil, photo_url: nil, password: nil, disabled: nil)
           @user_manager.create_user(
             uid: uid,
             display_name: display_name,
@@ -50,7 +49,6 @@ module Firebase
             photo_url: photo_url,
             password: password,
             disabled: disabled,
-            custom_claims: custom_claims,
           )
         end
 
